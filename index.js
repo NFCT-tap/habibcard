@@ -31,7 +31,6 @@ function toggleText(categoryId) {
   
 // Save Contact Button - Creates a downloadable vCard file
 
-
 document.getElementById('save-contact-button').addEventListener('click', () => {
     const vCardData = `
   BEGIN:VCARD
@@ -42,14 +41,17 @@ document.getElementById('save-contact-button').addEventListener('click', () => {
   EMAIL:contact@jawedhabib.com
   END:VCARD
     `;
-    const blob = new Blob([vCardData], { type: 'text/vcard' });
-    const url = URL.createObjectURL(blob);
-  
+
+    // Convert the vCard data to Base64
+    const base64VCard = btoa(vCardData);
+
+    // Create a data URI with Base64-encoded vCard
+    const vCardUri = `data:text/vcard;base64,${base64VCard}`;
+
     const a = document.createElement('a');
-    a.href = url;
+    a.href = vCardUri;
     a.download = 'Jawed_Habib.vcf';
     a.click();
-  
-    URL.revokeObjectURL(url);
-  });
+});
+
   
