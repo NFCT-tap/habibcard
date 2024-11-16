@@ -30,6 +30,8 @@ function toggleText(categoryId) {
 
   
 // Save Contact Button - Creates a downloadable vCard file
+
+
 document.getElementById('save-contact-button').addEventListener('click', () => {
     const vCardData = `
   BEGIN:VCARD
