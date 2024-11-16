@@ -37,7 +37,7 @@ document.getElementById('save-contact-button').addEventListener('click', () => {
   VERSION:3.0
   FN:Jawed Habib
   ORG:Jawed Habib Salons
-  TEL:+9347393957
+  TEL:+91 9347393957
   EMAIL:contact@jawedhabib.com
   END:VCARD
     `;
